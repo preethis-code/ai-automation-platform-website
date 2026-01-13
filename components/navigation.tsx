@@ -5,6 +5,15 @@ import { Button } from "@/components/ui/button";
 import { Zap, Menu, X } from "lucide-react";
 import { useState } from "react";
 
+import {
+  NavigationMenu,
+  NavigationMenuList,
+  NavigationMenuItem,
+  NavigationMenuTrigger,
+  NavigationMenuContent,
+  NavigationMenuLink,
+} from "@/components/ui/navigation-menu";
+
 export function Navigation({
   onDocsToggle,
 }: {
@@ -18,12 +27,10 @@ export function Navigation({
         <div className="container mx-auto flex h-16 items-center justify-between px-4">
           {/* Left */}
           <div className="flex items-center gap-2">
-            {/* Docs Menu (only on docs pages) */}
             {onDocsToggle && (
               <button
                 onClick={onDocsToggle}
                 className="md:hidden p-2 rounded-md hover:bg-accent"
-                aria-label="Open docs menu"
               >
                 <Menu className="h-5 w-5" />
               </button>
@@ -39,21 +46,63 @@ export function Navigation({
             </Link>
           </div>
 
-           {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-8 ml-10">
-          <Link href="/docs" className="text-sm font-medium hover:text-primary">
-            Docs
-          </Link>
-          <Link href="/showcase" className="text-sm font-medium hover:text-primary">
-            Showcase
-          </Link>
-          <Link href="/features" className="text-sm font-medium hover:text-primary">
-            Features
-          </Link>
-          <Link href="/community" className="text-sm font-medium hover:text-primary">
-            Community
-          </Link>
-        </nav>
+          {/* Desktop Nav */}
+          <div className="hidden md:flex items-center gap-8 ml-10">
+            <Link href="/docs" className="text-sm font-medium hover:text-primary">
+              Docs
+            </Link>
+
+            {/* Explore Dropdown */}
+            <NavigationMenu viewport={false}>
+              <NavigationMenuList>
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger>
+                    Explore
+                  </NavigationMenuTrigger>
+
+                  <NavigationMenuContent>
+                    <div className="grid w-64 gap-1 p-2">
+                      {[
+                        ["/roadmap", "Roadmap", "Where the project is headed"],
+                        ["/architecture", "Architecture", "Execution boundaries & system layout"],
+                        ["/execution-model", "Execution Model", "What happens when a workflow runs"],
+                        ["/internals", "Internals", "Engine components & design decisions"],
+                      ].map(([href, title, desc]) => (
+                        <NavigationMenuLink key={href} asChild>
+                          <Link href={href} className="rounded-md p-3 hover:bg-accent">
+                            <div className="font-medium">{title}</div>
+                            <div className="text-xs text-muted-foreground">
+                              {desc}
+                            </div>
+                          </Link>
+                        </NavigationMenuLink>
+                      ))}
+                    </div>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+              </NavigationMenuList>
+            </NavigationMenu>
+
+            <Link
+              href="/features"
+              className="text-sm font-medium hover:text-primary"
+            >
+              Features
+            </Link>
+            <Link
+              href="/showcase"
+              className="text-sm font-medium hover:text-primary"
+            >
+              Showcase
+            </Link>
+
+            <Link
+              href="/community"
+              className="text-sm font-medium hover:text-primary"
+            >
+              Community
+            </Link>
+          </div>
 
           {/* Desktop Buttons */}
           <div className="hidden md:flex items-center gap-4">
@@ -70,27 +119,24 @@ export function Navigation({
             </Button>
           </div>
 
-          {/* Mobile Site Menu Button */}
+          {/* Mobile Menu Button */}
           <button
             onClick={() => setSiteMenuOpen(true)}
             className="md:hidden p-2 rounded-md hover:bg-accent"
-            aria-label="Open site menu"
           >
             <Menu className="h-5 w-5" />
           </button>
         </div>
       </header>
 
-      {/* ================= MOBILE SITE MENU ================= */}
+      {/* ================= MOBILE MENU ================= */}
       {siteMenuOpen && (
         <div className="fixed inset-0 z-[60] md:hidden">
-          {/* Backdrop */}
           <div
             className="absolute inset-0 bg-black/60"
             onClick={() => setSiteMenuOpen(false)}
           />
 
-          {/* Drawer */}
           <aside className="absolute right-0 top-0 h-full w-72 bg-background border-l border-border flex flex-col">
             <div className="h-16 flex items-center justify-between px-4 border-b border-border">
               <span className="font-semibold">Menu</span>
@@ -102,8 +148,11 @@ export function Navigation({
             <nav className="flex-1 p-4 space-y-2">
               {[
                 ["/docs", "Docs"],
+                ["/roadmap", "Roadmap"],
+                ["/architecture", "Architecture"],
+                ["/execution-model", "Execution Model"],
+                ["/internals", "Internals"],
                 ["/showcase", "Showcase"],
-                ["/features", "Features"],
                 ["/community", "Community"],
               ].map(([href, label]) => (
                 <Link
