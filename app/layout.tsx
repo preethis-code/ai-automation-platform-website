@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   title: "AI Automation Platform | Local-First Workflow Automation",
   description:
     "Privacy-focused, local-first AI automation platform. Build powerful workflows with AI agents, document chat, and full execution control.",
-   icons: {
+  icons: {
     icon: "icon/icon.svg",
   },
 }
@@ -29,7 +29,31 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
-      <body className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased`}>{children}</body>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "SoftwareApplication",
+              "name": "AI Agent Automation",
+              "url": "https://vmdeshpande.github.io/ai-automation-platform-website/",
+              "applicationCategory": "DeveloperTool",
+              "creator": {
+                "@type": "Person",
+                "name": "Vedant Deshpande",
+                "url": "https://vmdeshpande.github.io/portfolio1/"
+              }
+            }),
+          }}
+        />
+      </head>
+
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased`}
+      >
+        {children}
+      </body>
     </html>
   )
 }
