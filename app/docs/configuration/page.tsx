@@ -1,26 +1,33 @@
-import { Badge } from "@/components/ui/badge"
-import { Card } from "@/components/ui/card"
-import { Settings, Key, Database, Globe, Code, Shield } from "lucide-react"
+import { Badge } from "@/components/ui/badge";
+import { Card } from "@/components/ui/card";
+import { Settings, Key, Database, Globe, Code, Shield } from "lucide-react";
 
 export default function ConfigurationDocs() {
   return (
     <div className="space-y-12 animate-fade-in">
       <div className="space-y-4">
-        <Badge variant="outline" className="text-primary border-primary/20 bg-primary/5">
+        <Badge
+          variant="outline"
+          className="text-primary border-primary/20 bg-primary/5"
+        >
           Setup
         </Badge>
-        <h1 className="text-4xl md:text-5xl font-bold tracking-tight">Configuration & Environment</h1>
+        <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
+          Configuration & Environment
+        </h1>
         <p className="text-xl text-muted-foreground leading-relaxed max-w-3xl">
-          Complete guide to configuring the AI Agent Automation Platform using environment variables and configuration
-          files.
+          Complete guide to configuring the AI Agent Automation Platform using
+          environment variables and configuration files.
         </p>
       </div>
 
       <div className="space-y-8">
         <h2 className="text-3xl font-bold">The .env File</h2>
         <p className="text-muted-foreground leading-relaxed">
-          The primary way to configure the backend engine is through environment variables. Copy the
-          <code>.env.example</code> file to <code>.env</code> in the <code>backend</code> directory.
+          The primary way to configure the backend engine is through environment
+          variables. Copy the
+          <code>.env.example</code> file to <code>.env</code> in the{" "}
+          <code>backend</code> directory.
         </p>
 
         <div className="space-y-6">
@@ -29,33 +36,60 @@ export default function ConfigurationDocs() {
               title: "Server Settings",
               icon: Globe,
               vars: [
-                { name: "PORT", desc: "The port the Express server will listen on (default: 5000)." },
-                { name: "NODE_ENV", desc: "Set to 'production' or 'development'." },
+                {
+                  name: "PORT",
+                  desc: "The port the Express server will listen on (default: 5000).",
+                },
+                {
+                  name: "NODE_ENV",
+                  desc: "Set to 'production' or 'development'.",
+                },
               ],
             },
             {
               title: "Database Configuration",
               icon: Database,
               vars: [
-                { name: "MONGODB_URI", desc: "The connection string for your MongoDB instance." },
-                { name: "DB_NAME", desc: "The name of the database to use (default: agent_automation)." },
+                {
+                  name: "MONGO_URI",
+                  desc: "The connection string for your MongoDB instance.",
+                },
               ],
             },
             {
               title: "AI Provider Settings",
               icon: Key,
               vars: [
-                { name: "OPENAI_API_KEY", desc: "Your OpenAI API key for LLM and embeddings." },
-                { name: "ANTHROPIC_API_KEY", desc: "Optional: Your Anthropic API key for Claude models." },
-                { name: "GOOGLE_API_KEY", desc: "Optional: Your Google API key for Gemini models." },
+                {
+                  name: "OLLAMA_HOST",
+                  desc: "Base URL of your local Ollama instance (e.g., http://localhost:11434). Required when using the 'ollama' provider.",
+                },
+                {
+                  name: "GROQ_API_KEY",
+                  desc: "API key for the Groq provider. Required when using Groq-hosted LLM models.",
+                },
+                {
+                  name: "OPENAI_API_KEY",
+                  desc: "API key for OpenAI models (e.g., gpt-4o, gpt-4o-mini). Required when using the 'openai' provider.",
+                },
+                {
+                  name: "GEMINI_API_KEY",
+                  desc: "API key for Google Gemini models (e.g., gemini-2.5-flash). Required when using the 'gemini' provider.",
+                },
+                {
+                  name: "HF_API_KEY",
+                  desc: "Optional: API key for Hugging Face Inference API. Required only when using the 'huggingface' provider.",
+                },
               ],
             },
             {
               title: "Security & Secret",
               icon: Shield,
               vars: [
-                { name: "JWT_SECRET", desc: "A strong secret for signing authentication tokens." },
-                { name: "ENCRYPTION_KEY", desc: "A 32-character key for encrypting sensitive tools data." },
+                {
+                  name: "JWT_SECRET",
+                  desc: "A strong secret for signing authentication tokens.",
+                },
               ],
             },
           ].map((section, i) => (
@@ -70,8 +104,12 @@ export default function ConfigurationDocs() {
                     key={j}
                     className="flex flex-col sm:flex-row sm:items-center gap-2 p-4 rounded-lg border border-border/50 bg-card/30"
                   >
-                    <code className="text-sm font-mono text-primary font-bold min-w-[180px]">{v.name}</code>
-                    <span className="text-sm text-muted-foreground">{v.desc}</span>
+                    <code className="text-sm font-mono text-primary font-bold min-w-[180px]">
+                      {v.name}
+                    </code>
+                    <span className="text-sm text-muted-foreground">
+                      {v.desc}
+                    </span>
                   </div>
                 ))}
               </div>
@@ -83,8 +121,8 @@ export default function ConfigurationDocs() {
       <div className="space-y-8">
         <h2 className="text-3xl font-bold">Advanced Configuration</h2>
         <p className="text-muted-foreground leading-relaxed">
-          For more granular control, you can modify the configuration objects in <code>src/config/index.ts</code>. This
-          includes settings for:
+          For more granular control, you can modify the configuration objects in{" "}
+          <code>src/config/index.ts</code>. This includes settings for:
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {[
@@ -107,7 +145,9 @@ export default function ConfigurationDocs() {
           ].map((item, i) => (
             <Card key={i} className="p-6 border-border/50 bg-card/30 space-y-2">
               <h4 className="font-bold">{item.title}</h4>
-              <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                {item.desc}
+              </p>
             </Card>
           ))}
         </div>
@@ -118,17 +158,44 @@ export default function ConfigurationDocs() {
         <Card className="overflow-hidden border-border/50 bg-card/50">
           <div className="flex items-center gap-2 px-4 py-2 border-b border-border/50 bg-muted/30">
             <Code className="h-4 w-4 text-muted-foreground" />
-            <span className="text-xs font-mono text-muted-foreground">.env</span>
+            <span className="text-xs font-mono text-muted-foreground">
+              .env
+            </span>
           </div>
           <pre className="p-6 text-sm font-mono overflow-x-auto text-muted-foreground">
-            <code>{`PORT=5000
-NODE_ENV=development
+            <code>{`# Server
+PORT=5000
+MONGO_URI=
+JWT_SECRET=
 
-MONGODB_URI=mongodb://localhost:27017/agent_automation
+# ---------------------------------------
+# AI Providers
+# Only configure providers you plan to use.
+# The system auto-detects availability based on these variables.
+# ---------------------------------------
 
-OPENAI_API_KEY=sk-your-key-here
-JWT_SECRET=your-super-secret-jwt-key
-ENCRYPTION_KEY=your-32-char-encryption-key-here`}</code>
+# Cloud Providers
+GROQ_API_KEY=
+OPENAI_API_KEY=
+GEMINI_API_KEY=
+HF_API_KEY=
+
+# Local Provider (Ollama)
+OLLAMA_HOST=http://localhost:11434
+
+# ---------------------------------------
+# Worker Runtime Settings
+# ---------------------------------------
+
+WORKER_POLL_INTERVAL_MS=2000   # Poll interval in ms (default: 2000)
+WORKER_BATCH_SIZE=1            # Number of tasks to claim at once
+WORKER_MAX_ATTEMPTS=3          # Max retry attempts per task
+
+# ---------------------------------------
+# Optional: Service Authentication
+# ---------------------------------------
+
+WORKER_SERVICE_TOKEN=`}</code>
           </pre>
         </Card>
       </div>
@@ -136,13 +203,16 @@ ENCRYPTION_KEY=your-32-char-encryption-key-here`}</code>
       <Card className="p-6 border-secondary/20 bg-secondary/5">
         <h3 className="font-bold text-lg mb-2 flex items-center gap-2">
           <Settings className="h-5 w-5 text-secondary" />
-          Pro-Tip: Local LLMs
+          Pro-Tip: Run Models Locally with Ollama
         </h3>
         <p className="text-sm text-muted-foreground leading-relaxed">
-          You can use local LLMs (via Ollama or LocalAI) by overriding the <code>BASE_URL</code> for the OpenAI
-          provider. Update the configuration in <code>src/config/ai.ts</code> to point to your local endpoint.
+          You can run LLMs locally using Ollama for faster iteration and zero
+          API costs. Set <code>OLLAMA_HOST</code> in your <code>.env</code>,
+          create an agent with provider <code>ollama</code>, and assign it to
+          your workflow. The system will automatically route execution to your
+          local model.
         </p>
       </Card>
     </div>
-  )
+  );
 }
