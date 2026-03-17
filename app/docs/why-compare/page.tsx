@@ -1,19 +1,29 @@
-import { Badge } from "@/components/ui/badge"
-import { Card } from "@/components/ui/card"
-import { CheckCircle2, XCircle } from "lucide-react"
+import { Badge } from "@/components/ui/badge";
+import { Card } from "@/components/ui/card";
+import { CheckCircle2, XCircle } from "lucide-react";
+
+export const metadata = {
+  title: "AI Agent Automation vs Zapier vs n8n",
+  description:
+    "Compare AI Agent Automation with traditional automation tools like Zapier and n8n.",
+};
 
 export default function WhyCompare() {
   return (
     <div className="space-y-12 animate-fade-in">
       <div className="space-y-4">
-        <Badge variant="outline" className="text-primary border-primary/20 bg-primary/5">
+        <Badge
+          variant="outline"
+          className="text-primary border-primary/20 bg-primary/5"
+        >
           Comparison
         </Badge>
         <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
           How This Platform Compares
         </h1>
         <p className="text-xl text-muted-foreground max-w-3xl leading-relaxed">
-          A transparent comparison with popular automation and AI workflow tools.
+          A transparent comparison with popular automation and AI workflow
+          tools.
         </p>
       </div>
 
@@ -58,7 +68,9 @@ export default function WhyCompare() {
       </Card>
 
       <Card className="p-8 bg-card/30 border-border/50 space-y-4">
-        <h2 className="text-2xl font-bold">Not a Replacement — a Different Philosophy</h2>
+        <h2 className="text-2xl font-bold">
+          Not a Replacement — a Different Philosophy
+        </h2>
         <p className="text-muted-foreground leading-relaxed">
           This platform isn’t trying to replace cloud-first tools. It exists for
           developers who want local execution, predictable behavior, and deep
@@ -66,5 +78,5 @@ export default function WhyCompare() {
         </p>
       </Card>
     </div>
-  )
+  );
 }

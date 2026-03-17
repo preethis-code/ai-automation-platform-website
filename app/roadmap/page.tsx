@@ -7,11 +7,17 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import {
   CheckCircle2,
-  CircleDashed,
   Rocket,
-  Eye,
+  Wrench,
+  Server,
   ChevronDown,
 } from "lucide-react";
+
+export const metadata = {
+  title: "Project Roadmap | AI Agent Automation",
+  description:
+    "See the future roadmap for AI Agent Automation including workflow templates, visual graphs, plugin system, and multi-agent automation.",
+};
 
 /* -----------------------------
    Expandable Item
@@ -21,46 +27,33 @@ function RoadmapItem({
   title,
   status,
   details,
-  muted = false,
 }: {
   title: string;
-  status: "Stable" | "Planned" | "Experimental";
+  status: "Stable" | "In Progress" | "Planned" | "Research";
   details: string;
-  muted?: boolean;
 }) {
   const [open, setOpen] = useState(false);
+
+  const statusStyles = {
+    Stable: "border-green-500/40 text-green-500",
+    "In Progress": "border-blue-500/40 text-blue-500",
+    Planned: "border-primary/40 text-primary",
+    Research: "border-muted-foreground/40 text-muted-foreground",
+  };
 
   return (
     <Card
       onClick={() => setOpen(!open)}
-      className={`cursor-pointer p-6 border-border/50 transition-all ${
-        muted
-          ? "bg-card/20 hover:bg-card/30"
-          : "bg-card/30 hover:bg-card/50"
-      }`}
+      className="cursor-pointer p-6 border-border/50 bg-card/40 hover:bg-card/60 transition-all"
     >
       <div className="flex items-start justify-between gap-4">
-        <p
-          className={`text-lg ${
-            muted ? "text-muted-foreground" : ""
-          }`}
-        >
-          {title}
-        </p>
+        <p className="text-lg">{title}</p>
 
         <div className="flex items-center gap-2">
-          <Badge
-            variant="outline"
-            className={`${
-              status === "Stable"
-                ? "border-success/40 text-success"
-                : status === "Planned"
-                ? "border-primary/40 text-primary"
-                : "border-muted-foreground/40 text-muted-foreground"
-            }`}
-          >
+          <Badge variant="outline" className={statusStyles[status]}>
             {status}
           </Badge>
+
           <ChevronDown
             className={`h-4 w-4 transition-transform ${
               open ? "rotate-180" : ""
@@ -82,22 +75,11 @@ function RoadmapItem({
    Section
 ------------------------------ */
 
-function Section({
-  title,
-  subtitle,
-  icon: Icon,
-  progress,
-  items,
-  muted = false,
-}: any) {
+function Section({ title, subtitle, icon: Icon, progress, items }: any) {
   return (
     <section className="container mx-auto pb-24 px-4">
       <div className="flex items-center gap-3 mb-4">
-        <Icon
-          className={`h-7 w-7 ${
-            muted ? "text-muted-foreground" : "text-primary"
-          }`}
-        />
+        <Icon className="h-7 w-7 text-primary" />
         <h2 className="text-4xl font-bold">{title}</h2>
         <span className="text-muted-foreground">{subtitle}</span>
       </div>
@@ -105,16 +87,14 @@ function Section({
       {/* Progress */}
       <div className="mb-8 h-2 w-full rounded-full bg-border overflow-hidden">
         <div
-          className={`h-full ${
-            muted ? "bg-muted-foreground/40" : "bg-primary"
-          } transition-all duration-700`}
+          className="h-full bg-primary transition-all duration-700"
           style={{ width: `${progress}%` }}
         />
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {items.map((item: any) => (
-          <RoadmapItem key={item.title} {...item} muted={muted} />
+          <RoadmapItem key={item.title} {...item} />
         ))}
       </div>
     </section>
@@ -140,96 +120,157 @@ export default function RoadmapPage() {
         </Badge>
 
         <h1 className="text-5xl md:text-7xl font-bold mb-6">
-          Built in Public. Shipped with Intent.
+          The Path to a Full AI Automation Platform
         </h1>
 
         <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-          This roadmap explains not just <em>what</em> is coming — but
-          <em> why</em>, and under what constraints.
+          This roadmap outlines how AI Agent Automation evolves from a workflow
+          engine into a full automation platform. Features are introduced
+          gradually to maintain determinism, observability, and system
+          reliability.
         </p>
       </section>
 
       {/* Philosophy */}
       <section className="container mx-auto pb-20 px-4">
         <Card className="p-10 border-border/50 bg-card/40">
-          <h2 className="text-3xl font-bold mb-4">How to Read This Roadmap</h2>
+          <h2 className="text-3xl font-bold mb-4">Roadmap Philosophy</h2>
+
           <p className="text-lg text-muted-foreground max-w-3xl">
-            Features move forward only when they preserve determinism,
-            debuggability, and operational safety. Dates are less important
-            than correctness.
+            The platform grows in layers. First usability, then automation
+            power, followed by developer ecosystem features and finally
+            production infrastructure. Each step builds on the previous one to
+            keep the system predictable and maintainable.
           </p>
         </Card>
       </section>
 
-      {/* Now */}
+      {/* Phase 1 */}
       <Section
-        title="Now"
-        subtitle="Stable & Actively Used"
+        title="Phase 1"
+        subtitle="Usability & Onboarding"
         icon={CheckCircle2}
-        progress={100}
+        progress={80}
         items={[
           {
-            title: "Deterministic workflow execution engine",
+            title: "Workflow Template System",
             status: "Stable",
             details:
-              "Workflows execute step-by-step with no hidden retries, shared state, or magic behavior.",
+              "Provide a built-in library of reusable workflow templates such as research agents, blog generators, and GitHub automation pipelines.",
           },
           {
-            title: "Agent-driven step execution",
+            title: "Visual Workflow Graph",
             status: "Stable",
             details:
-              "Agents execute explicit steps (LLM, HTTP, Tool, Delay) with strict input/output boundaries.",
+              "Add a node-based visualization of workflows so users can understand and debug execution flows more easily.",
           },
           {
-            title: "Task-based execution model",
-            status: "Stable",
+            title: "Agent Playground",
+            status: "Planned",
             details:
-              "Every run produces an immutable task record with full traceability.",
+              "Allow developers to test agents, prompts, and models directly without building a workflow.",
           },
         ]}
       />
 
-      {/* Next */}
+      {/* Phase 2 */}
       <Section
-        title="Next"
-        subtitle="Planned & Designed"
+        title="Phase 2"
+        subtitle="Automation Capabilities"
         icon={Rocket}
-        progress={55}
+        progress={35}
         items={[
           {
-            title: "WebSocket-based live execution updates",
+            title: "Conditional Logic Steps",
             status: "Planned",
             details:
-              "Move from polling to event-driven updates for steps, logs, and status changes.",
+              "Introduce conditional branching inside workflows allowing steps such as IF, SWITCH, and dynamic execution paths.",
           },
           {
-            title: "Plugin-based tool system",
+            title: "Trigger System",
             status: "Planned",
             details:
-              "Allow safe extension of agent capabilities with permission boundaries.",
+              "Enable workflows to run automatically from events such as webhooks, cron schedules, API calls, or external services.",
+          },
+          {
+            title: "Document Workflow Integration",
+            status: "Stable",
+            details:
+              "Allow workflows to query documents indexed in the RAG system and use the results inside automation pipelines.",
           },
         ]}
       />
 
-      {/* Later */}
+      {/* Phase 3 */}
       <Section
-        title="Later"
-        subtitle="Experimental & Optional"
-        icon={CircleDashed}
+        title="Phase 3"
+        subtitle="Developer Ecosystem"
+        icon={Wrench}
         progress={20}
-        muted
         items={[
           {
-            title: "Advanced persistent agent memory",
-            status: "Experimental",
+            title: "Tool Marketplace / Plugin System",
+            status: "Research",
             details:
-              "Requires strong guarantees around isolation, correctness, and replayability.",
+              "Allow developers to build and share custom automation tools such as Slack integrations, GitHub automations, and database connectors.",
           },
           {
-            title: "Distributed execution workers",
-            status: "Experimental",
+            title: "CLI Tool",
+            status: "Planned",
             details:
-              "Only considered once single-node execution is fully observable and robust.",
+              "Provide a developer CLI for running workflows, inspecting logs, and deploying automation pipelines directly from the terminal.",
+          },
+          {
+            title: "Public Workflow Sharing",
+            status: "Planned",
+            details:
+              "Allow workflows to be shared via links and imported into other installations to encourage community contributions.",
+          },
+        ]}
+      />
+
+      {/* Phase 4 */}
+      <Section
+        title="Phase 4"
+        subtitle="Platform Scale & Production"
+        icon={Server}
+        progress={10}
+        items={[
+          {
+            title: "Workflow Versioning",
+            status: "Research",
+            details:
+              "Introduce version history and rollback capability for workflows to safely evolve automation pipelines.",
+          },
+          {
+            title: "Hybrid RAG Search",
+            status: "Planned",
+            details:
+              "Combine vector search with keyword search to improve document retrieval accuracy for structured and factual queries.",
+          },
+          {
+            title: "Multi-Agent Workflows",
+            status: "Planned",
+            details:
+              "Enable workflows where multiple specialized agents collaborate sequentially to complete complex tasks.",
+          },
+          {
+            title: "Workflow Execution Timeline Upgrade",
+            status: "Planned",
+            details:
+              "Improve observability by adding step durations, retry tracking, error classification, and performance metrics.",
+          },
+          {
+            title: "Docker One-Click Deploy",
+            status: "Stable",
+            details:
+              "Provide an easy self-hosting experience with a single Docker command for developers and teams.",
+          },
+          {
+            title: "Monitoring Dashboard",
+            status: "Research",
+            details:
+              "Add system metrics such as workflow runs, success rate, runtime statistics, and agent activity monitoring.",
           },
         ]}
       />
@@ -237,13 +278,12 @@ export default function RoadmapPage() {
       {/* CTA */}
       <section className="container mx-auto pb-32 px-4 text-center">
         <Card className="p-14 border-primary/20 bg-primary/5">
-          <Eye className="h-10 w-10 mx-auto mb-6 text-primary" />
-          <h3 className="text-3xl font-bold mb-4">
-            This Roadmap Is a Conversation
-          </h3>
+          <h3 className="text-3xl font-bold mb-4">Built in Public</h3>
+
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            If you care about execution engines, agent systems, or automation
-            internals — your feedback directly shapes this project.
+            AI Agent Automation is developed openly. Feedback, ideas, and
+            contributions from developers help shape the future direction of the
+            platform.
           </p>
         </Card>
       </section>

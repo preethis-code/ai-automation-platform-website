@@ -1,25 +1,37 @@
-import { Badge } from "@/components/ui/badge"
-import { Card } from "@/components/ui/card"
-import { Globe, Code, Box, Terminal, ArrowRight } from "lucide-react"
+import { Badge } from "@/components/ui/badge";
+import { Card } from "@/components/ui/card";
+import { Globe, Code, Box, Terminal, ArrowRight } from "lucide-react";
+
+export const metadata = {
+  title: "API Reference | AI Agent Automation Docs",
+  description:
+    "Complete API reference for the AI Agent Automation backend and workflow engine.",
+};
 
 export default function APIReferenceDocs() {
   return (
     <div className="space-y-12 animate-fade-in">
       <div className="space-y-4">
-        <Badge variant="outline" className="text-primary border-primary/20 bg-primary/5">
+        <Badge
+          variant="outline"
+          className="text-primary border-primary/20 bg-primary/5"
+        >
           Reference
         </Badge>
-        <h1 className="text-4xl md:text-5xl font-bold tracking-tight">API Reference (REST)</h1>
+        <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
+          API Reference (REST)
+        </h1>
         <p className="text-xl text-muted-foreground leading-relaxed max-w-3xl">
-          Integrate the AI Agent Automation Platform into your own applications using our structured REST API.
+          Integrate the AI Agent Automation Platform into your own applications
+          using our structured REST API.
         </p>
       </div>
 
       <div className="space-y-8">
         <h2 className="text-3xl font-bold">Introduction</h2>
         <p className="text-muted-foreground leading-relaxed">
-          The platform exposes a versioned REST API (v1) for managing workflows, agents, schedules, and documents. All
-          requests and responses use JSON.
+          The platform exposes a versioned REST API (v1) for managing workflows,
+          agents, schedules, and documents. All requests and responses use JSON.
         </p>
         <div className="flex items-center gap-4 p-4 rounded-xl border border-border bg-card/30">
           <div className="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
@@ -27,7 +39,9 @@ export default function APIReferenceDocs() {
           </div>
           <div>
             <h4 className="font-bold text-sm">Base URL</h4>
-            <code className="text-xs font-mono text-muted-foreground">http://localhost:5000/api/v1</code>
+            <code className="text-xs font-mono text-muted-foreground">
+              http://localhost:5000/api/v1
+            </code>
           </div>
         </div>
       </div>
@@ -38,28 +52,68 @@ export default function APIReferenceDocs() {
             title: "Workflows",
             icon: Box,
             endpoints: [
-              { method: "GET", path: "/workflows", desc: "List all workflow definitions." },
-              { method: "POST", path: "/workflows", desc: "Create a new workflow definition." },
-              { method: "GET", path: "/workflows/:id", desc: "Get details of a specific workflow." },
-              { method: "POST", path: "/workflows/run", desc: "Trigger a manual execution of a workflow." },
+              {
+                method: "GET",
+                path: "/workflows",
+                desc: "List all workflow definitions.",
+              },
+              {
+                method: "POST",
+                path: "/workflows",
+                desc: "Create a new workflow definition.",
+              },
+              {
+                method: "GET",
+                path: "/workflows/:id",
+                desc: "Get details of a specific workflow.",
+              },
+              {
+                method: "POST",
+                path: "/workflows/run",
+                desc: "Trigger a manual execution of a workflow.",
+              },
             ],
           },
           {
             title: "Agents",
             icon: Terminal,
             endpoints: [
-              { method: "GET", path: "/agents", desc: "List all registered agent profiles." },
-              { method: "POST", path: "/agents", desc: "Register or update an agent profile." },
-              { method: "POST", path: "/agents/chat", desc: "Send a direct prompt to an agent." },
+              {
+                method: "GET",
+                path: "/agents",
+                desc: "List all registered agent profiles.",
+              },
+              {
+                method: "POST",
+                path: "/agents",
+                desc: "Register or update an agent profile.",
+              },
+              {
+                method: "POST",
+                path: "/agents/chat",
+                desc: "Send a direct prompt to an agent.",
+              },
             ],
           },
           {
             title: "Documents (RAG)",
             icon: Code,
             endpoints: [
-              { method: "POST", path: "/documents/upload", desc: "Upload and ingest a PDF or text file." },
-              { method: "GET", path: "/documents/:id", desc: "Get ingestion status and metadata." },
-              { method: "POST", path: "/documents/query", desc: "Perform semantic search across documents." },
+              {
+                method: "POST",
+                path: "/documents/upload",
+                desc: "Upload and ingest a PDF or text file.",
+              },
+              {
+                method: "GET",
+                path: "/documents/:id",
+                desc: "Get ingestion status and metadata.",
+              },
+              {
+                method: "POST",
+                path: "/documents/query",
+                desc: "Perform semantic search across documents.",
+              },
             ],
           },
         ].map((section, i) => (
@@ -70,7 +124,10 @@ export default function APIReferenceDocs() {
             </div>
             <div className="grid gap-4">
               {section.endpoints.map((ep, j) => (
-                <Card key={j} className="p-4 border-border/50 bg-card/30 hover:bg-card/40 transition-colors">
+                <Card
+                  key={j}
+                  className="p-4 border-border/50 bg-card/30 hover:bg-card/40 transition-colors"
+                >
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                     <div className="flex items-center gap-3">
                       <Badge
@@ -78,9 +135,13 @@ export default function APIReferenceDocs() {
                       >
                         {ep.method}
                       </Badge>
-                      <code className="text-sm font-mono font-bold">{ep.path}</code>
+                      <code className="text-sm font-mono font-bold">
+                        {ep.path}
+                      </code>
                     </div>
-                    <span className="text-sm text-muted-foreground">{ep.desc}</span>
+                    <span className="text-sm text-muted-foreground">
+                      {ep.desc}
+                    </span>
                   </div>
                 </Card>
               ))}
@@ -94,7 +155,9 @@ export default function APIReferenceDocs() {
         <Card className="overflow-hidden border-border/50 bg-card/50">
           <div className="flex items-center gap-2 px-4 py-2 border-b border-border/50 bg-muted/30">
             <Code className="h-4 w-4 text-muted-foreground" />
-            <span className="text-xs font-mono text-muted-foreground">error-response.json</span>
+            <span className="text-xs font-mono text-muted-foreground">
+              error-response.json
+            </span>
           </div>
           <pre className="p-6 text-sm font-mono overflow-x-auto text-muted-foreground">
             <code>{`{
@@ -115,10 +178,12 @@ export default function APIReferenceDocs() {
           Interactive Documentation
         </h3>
         <p className="text-sm text-muted-foreground leading-relaxed">
-          The backend automatically generates a Swagger / OpenAPI UI. When the server is running in development mode,
-          you can access it at <code>http://localhost:5000/api-docs</code> to test endpoints directly.
+          The backend automatically generates a Swagger / OpenAPI UI. When the
+          server is running in development mode, you can access it at{" "}
+          <code>http://localhost:5000/api-docs</code> to test endpoints
+          directly.
         </p>
       </Card>
     </div>
-  )
+  );
 }

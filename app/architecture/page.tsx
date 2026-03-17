@@ -12,6 +12,12 @@ import {
   ShieldCheck,
 } from "lucide-react";
 
+export const metadata = {
+  title: "System Architecture | AI Agent Automation",
+  description:
+    "Understand the architecture of AI Agent Automation including the workflow runner, executor, scheduler, and modular automation tools.",
+};
+
 export default function ArchitecturePage() {
   return (
     <div className="min-h-screen bg-background">

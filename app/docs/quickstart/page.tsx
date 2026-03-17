@@ -2,6 +2,12 @@ import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import { Terminal, Rocket, CheckCircle2, Cpu, Workflow } from "lucide-react";
 
+export const metadata = {
+  title: "Quickstart Guide | AI Agent Automation Docs",
+  description:
+    "Get started quickly with AI Agent Automation by installing the platform and running your first AI workflow.",
+};
+
 export default function QuickstartPage() {
   return (
     <div className="space-y-12 animate-fade-in">
@@ -124,7 +130,10 @@ export default function QuickstartPage() {
         <p className="text-muted-foreground leading-relaxed max-w-3xl">
           Every workflow execution follows a deterministic lifecycle.
           Understanding this flow helps you debug failures, optimize steps, and
-          reason about agent behavior with confidence.<br /><br />When you click “Run Workflow”, the platform follows a deterministic
+          reason about agent behavior with confidence.
+          <br />
+          <br />
+          When you click “Run Workflow”, the platform follows a deterministic
           execution path. Here’s what happens under the hood:
         </p>
 

@@ -11,6 +11,12 @@ import {
   ArrowRight,
 } from "lucide-react";
 
+export const metadata = {
+  title: "Workflow Runner | AI Agent Automation Docs",
+  description:
+    "Understand how the workflow runner executes automation pipelines step-by-step.",
+};
+
 export default function StepRunnerPage() {
   return (
     <div className="space-y-12 animate-fade-in">

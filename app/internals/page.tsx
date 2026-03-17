@@ -15,6 +15,12 @@ import {
   ShieldCheck,
 } from "lucide-react";
 
+export const metadata = {
+  title: "Engine Internals | AI Agent Automation",
+  description:
+    "Deep dive into the internal components of AI Agent Automation including the execution engine, worker loop, tool adapters, and task lifecycle.",
+};
+
 /* -----------------------------
    Expandable Block
 ------------------------------ */
@@ -93,16 +99,14 @@ export default function InternalsPage() {
       {/* Execution Spine */}
       <section className="container mx-auto pb-24 px-4">
         <Card className="p-10 border-border/50 bg-card/30">
-          <h2 className="text-3xl font-bold mb-4">
-            The Execution Spine
-          </h2>
+          <h2 className="text-3xl font-bold mb-4">The Execution Spine</h2>
           <p className="text-lg text-muted-foreground max-w-4xl">
-            Every workflow execution follows the same immutable path.  
-            No shortcuts. No branching logic injected by agents.
+            Every workflow execution follows the same immutable path. No
+            shortcuts. No branching logic injected by agents.
           </p>
 
           <pre className="mt-6 rounded-xl bg-black/40 p-6 text-sm text-muted-foreground overflow-x-auto">
-{`trigger → task → agent runner → step executor → persistence`}
+            {`trigger → task → agent runner → step executor → persistence`}
           </pre>
         </Card>
       </section>
@@ -193,12 +197,10 @@ export default function InternalsPage() {
       {/* Why This Matters */}
       <section className="container mx-auto pb-32 px-4 text-center">
         <Card className="p-12 md:p-16 border-border/50 bg-card/30">
-          <h3 className="text-3xl font-bold mb-4">
-            Why This Design Exists
-          </h3>
+          <h3 className="text-3xl font-bold mb-4">Why This Design Exists</h3>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            AI systems become dangerous when behavior cannot be explained.
-            These internals exist to ensure every execution is observable,
+            AI systems become dangerous when behavior cannot be explained. These
+            internals exist to ensure every execution is observable,
             reproducible, and auditable — even months later.
           </p>
         </Card>

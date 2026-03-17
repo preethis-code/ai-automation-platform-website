@@ -2,6 +2,12 @@ import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import { CheckCircle2 } from "lucide-react";
 
+export const metadata = {
+  title: "Installation Guide | AI Agent Automation",
+  description:
+    "Install AI Agent Automation locally and run the workflow automation engine with agents, tools, and scheduling.",
+};
+
 export default function InstallationDocs() {
   return (
     <div className="space-y-10 animate-fade-in">

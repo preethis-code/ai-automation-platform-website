@@ -16,8 +16,13 @@ import {
   MessageSquare,
   Lock,
 } from "lucide-react";
-
 import Link from "next/link";
+
+export const metadata = {
+  title: "Workflow Showcase | AI Agent Automation",
+  description:
+    "Explore real examples of automation workflows built with AI Agent Automation including research agents, RAG pipelines, and automation tools.",
+};
 
 export default function ShowcasePage() {
   return (

@@ -21,6 +21,18 @@ import {
   Terminal,
 } from "lucide-react";
 
+export const metadata = {
+  title: "Platform Features | AI Agent Automation",
+  description:
+    "Explore features of AI Agent Automation including agent workflows, document RAG search, semantic memory, automation tools, and scheduling.",
+  keywords: [
+    "AI automation features",
+    "AI workflow tools",
+    "AI agents automation",
+    "self hosted automation",
+  ],
+};
+
 export default function FeaturesPage() {
   return (
     <div className="min-h-screen bg-background">
@@ -37,8 +49,9 @@ export default function FeaturesPage() {
               A Local-First AI Automation Engine
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Build, execute, and scale intelligent workflows powered by AI agents —
-              without giving up control of your data, logic, or infrastructure.
+              Build, execute, and scale intelligent workflows powered by AI
+              agents — without giving up control of your data, logic, or
+              infrastructure.
             </p>
           </div>
 

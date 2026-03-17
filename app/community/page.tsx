@@ -11,8 +11,15 @@ import {
   Star,
   GitPullRequest,
   MessageSquare,
+  Globe,
 } from "lucide-react";
 import Link from "next/link";
+
+export const metadata = {
+  title: "Community | AI Agent Automation",
+  description:
+    "Join the community building AI Agent Automation. Contribute on GitHub, participate in discussions, and collaborate on open-source AI workflows.",
+};
 
 export default function CommunityPage() {
   return (
@@ -36,7 +43,7 @@ export default function CommunityPage() {
 
         {/* Community Channels */}
         <section className="max-w-6xl mx-auto mb-28">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* GitHub */}
             <Card className="p-8 text-center space-y-5 hover:border-primary/50 transition-all">
               <div className="mx-auto h-16 w-16 rounded-full bg-primary/10 flex items-center justify-center">
@@ -98,6 +105,32 @@ export default function CommunityPage() {
                   rel="noopener noreferrer"
                 >
                   Read Contribution Docs
+                </a>
+              </Button>
+            </Card>
+
+            {/* Reddit */}
+            {/* Reddit */}
+            <Card className="p-8 text-center space-y-5 hover:border-orange-500/50 transition-all">
+              <div className="mx-auto h-16 w-16 rounded-full bg-orange-500/10 flex items-center justify-center">
+                <Globe className="h-8 w-8 text-orange-500" />
+              </div>
+
+              <h3 className="text-2xl font-bold">Join the Reddit Community</h3>
+
+              <p className="text-muted-foreground leading-relaxed">
+                Follow development updates, share ideas, and discuss AI
+                automation architecture with other builders in the community
+                subreddit.
+              </p>
+
+              <Button size="lg" variant="outline" className="w-full" asChild>
+                <a
+                  href="https://www.reddit.com/r/AgentAutomation/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Join r/AgentAutomation
                 </a>
               </Button>
             </Card>

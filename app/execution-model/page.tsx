@@ -12,6 +12,12 @@ import {
 } from "lucide-react";
 import { ExecutionCanvas } from "@/components/execution-model/execution-canvas";
 
+export const metadata = {
+  title: "Workflow Execution Model | AI Agent Automation",
+  description:
+    "Learn how workflows execute deterministically in AI Agent Automation including task runners, step execution, and runtime context.",
+};
+
 export default function ExecutionModelPage() {
   return (
     <div className="min-h-screen bg-background">
@@ -156,7 +162,6 @@ export default function ExecutionModelPage() {
             immediately on failure.
           </p>
         </div>
-
       </section>
 
       {/* Rules */}

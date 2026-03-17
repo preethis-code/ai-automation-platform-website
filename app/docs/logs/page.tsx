@@ -10,6 +10,12 @@ import {
 } from "@/components/ui/table";
 import { Shield, History, Activity, Code, Bug } from "lucide-react";
 
+export const metadata = {
+  title: "Execution Logs | AI Agent Automation Docs",
+  description:
+    "Inspect workflow execution logs, step results, and debugging information.",
+};
+
 export default function ExecutionLogsPage() {
   return (
     <div className="space-y-12 animate-fade-in">

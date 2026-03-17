@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://vmdeshpande.github.io/ai-automation-platform-website/sitemap.xml

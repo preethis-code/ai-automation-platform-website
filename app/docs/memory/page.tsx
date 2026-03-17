@@ -2,6 +2,12 @@ import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import { Brain, Database, Search, Clock, Code, Shield } from "lucide-react";
 
+export const metadata = {
+  title: "Agent Memory System | AI Agent Automation Docs",
+  description:
+    "Learn how semantic memory allows AI agents to store and retrieve knowledge using embeddings and similarity search.",
+};
+
 export default function MemoryDocs() {
   return (
     <div className="space-y-10 animate-fade-in">
@@ -17,8 +23,8 @@ export default function MemoryDocs() {
         </h1>
         <p className="text-xl text-muted-foreground leading-relaxed max-w-3xl">
           A vendor-agnostic, embedding-powered semantic memory system that
-          enables agents to persist knowledge, recall context intelligently,
-          and maintain continuity across workflow executions.
+          enables agents to persist knowledge, recall context intelligently, and
+          maintain continuity across workflow executions.
         </p>
       </div>
 
@@ -26,10 +32,9 @@ export default function MemoryDocs() {
       <div className="space-y-6">
         <h2 className="text-3xl font-bold">Why Memory Matters</h2>
         <p className="text-muted-foreground leading-relaxed">
-          Without memory, every workflow execution starts from scratch.
-          With semantic memory enabled, agents can retrieve relevant
-          past interactions and facts using vector similarity — not
-          keyword matching.
+          Without memory, every workflow execution starts from scratch. With
+          semantic memory enabled, agents can retrieve relevant past
+          interactions and facts using vector similarity — not keyword matching.
         </p>
       </div>
 
@@ -42,35 +47,37 @@ export default function MemoryDocs() {
             <h4 className="font-bold text-lg mb-2">1. Embedding Generation</h4>
             <p className="text-sm text-muted-foreground leading-relaxed">
               When memory is stored, the content is converted into a vector
-              embedding using the configured embedding provider. This is
-              fully vendor-agnostic and supports OpenAI, Gemini, HuggingFace,
-              and Ollama (local).
+              embedding using the configured embedding provider. This is fully
+              vendor-agnostic and supports OpenAI, Gemini, HuggingFace, and
+              Ollama (local).
             </p>
           </Card>
 
           <Card className="p-6 border-border/50 bg-card/30">
-            <h4 className="font-bold text-lg mb-2">2. Cosine Similarity Search</h4>
+            <h4 className="font-bold text-lg mb-2">
+              2. Cosine Similarity Search
+            </h4>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              Before an LLM step runs, the system generates an embedding
-              for the current prompt and compares it against stored memory
-              using cosine similarity to retrieve the most relevant entries.
+              Before an LLM step runs, the system generates an embedding for the
+              current prompt and compares it against stored memory using cosine
+              similarity to retrieve the most relevant entries.
             </p>
           </Card>
 
           <Card className="p-6 border-border/50 bg-card/30">
             <h4 className="font-bold text-lg mb-2">3. Threshold Filtering</h4>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              Only memories above a similarity threshold are injected.
-              This prevents irrelevant memory pollution and keeps responses grounded.
+              Only memories above a similarity threshold are injected. This
+              prevents irrelevant memory pollution and keeps responses grounded.
             </p>
           </Card>
 
           <Card className="p-6 border-border/50 bg-card/30">
             <h4 className="font-bold text-lg mb-2">4. Prompt Injection</h4>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              Retrieved memories are injected into the prompt with
-              strong system instructions to ensure models — even smaller ones —
-              properly utilize stored context.
+              Retrieved memories are injected into the prompt with strong system
+              instructions to ensure models — even smaller ones — properly
+              utilize stored context.
             </p>
           </Card>
         </div>
@@ -80,8 +87,8 @@ export default function MemoryDocs() {
       <div className="space-y-6">
         <h2 className="text-3xl font-bold">Using Memory in Workflows</h2>
         <p className="text-muted-foreground">
-          Memory is opt-in per LLM step and configured through the
-          Workflow Builder under Advanced Options.
+          Memory is opt-in per LLM step and configured through the Workflow
+          Builder under Advanced Options.
         </p>
 
         <Card className="overflow-hidden border-border/50 bg-card/50">
@@ -110,24 +117,24 @@ export default function MemoryDocs() {
           <Card className="p-6 border-border/50 bg-card/30">
             <h4 className="font-bold text-lg mb-2">Retention Policy</h4>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              Memory is capped per agent (default: 500 entries). Oldest
-              entries are automatically pruned to prevent unbounded growth.
+              Memory is capped per agent (default: 500 entries). Oldest entries
+              are automatically pruned to prevent unbounded growth.
             </p>
           </Card>
 
           <Card className="p-6 border-border/50 bg-card/30">
             <h4 className="font-bold text-lg mb-2">Token Guard</h4>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              Injected memory is character-limited to avoid context overflow
-              and excessive token usage.
+              Injected memory is character-limited to avoid context overflow and
+              excessive token usage.
             </p>
           </Card>
 
           <Card className="p-6 border-border/50 bg-card/30">
             <h4 className="font-bold text-lg mb-2">Structured Storage</h4>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              Memory is stored in structured format (user + assistant)
-              for cleaner retrieval and future RAG expansion.
+              Memory is stored in structured format (user + assistant) for
+              cleaner retrieval and future RAG expansion.
             </p>
           </Card>
         </div>
@@ -142,9 +149,9 @@ export default function MemoryDocs() {
         <p className="text-sm text-muted-foreground leading-relaxed">
           The memory system does not depend on any external vector database.
           Embeddings are generated via configured providers and stored locally
-          in MongoDB. If an LLM provider does not support embeddings (e.g., Groq),
-          the system automatically falls back to a local embedding provider
-          such as Ollama.
+          in MongoDB. If an LLM provider does not support embeddings (e.g.,
+          Groq), the system automatically falls back to a local embedding
+          provider such as Ollama.
         </p>
       </Card>
     </div>

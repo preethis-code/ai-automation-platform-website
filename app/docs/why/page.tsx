@@ -1,20 +1,29 @@
-import { Badge } from "@/components/ui/badge"
-import { Card } from "@/components/ui/card"
-import { Shield, Cpu, Workflow, Lock } from "lucide-react"
+import { Badge } from "@/components/ui/badge";
+import { Card } from "@/components/ui/card";
+import { Shield, Cpu, Workflow, Lock } from "lucide-react";
+
+export const metadata = {
+  title: "Why AI Agent Automation | Platform Philosophy",
+  description:
+    "Learn the philosophy behind building deterministic AI automation systems.",
+};
 
 export default function WhyPlatform() {
   return (
     <div className="space-y-12 animate-fade-in">
       <div className="space-y-4">
-        <Badge variant="outline" className="text-primary border-primary/20 bg-primary/5">
+        <Badge
+          variant="outline"
+          className="text-primary border-primary/20 bg-primary/5"
+        >
           Why This Platform
         </Badge>
         <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
           Built for Developers Who Want Control
         </h1>
         <p className="text-xl text-muted-foreground max-w-3xl leading-relaxed">
-          This platform is designed for engineers who want deterministic automation,
-          local execution, and full ownership of their AI workflows.
+          This platform is designed for engineers who want deterministic
+          automation, local execution, and full ownership of their AI workflows.
         </p>
       </div>
 
@@ -54,10 +63,10 @@ export default function WhyPlatform() {
       <Card className="p-8 bg-primary/5 border-primary/20 text-center space-y-4">
         <h2 className="text-2xl font-bold">Who Is This For?</h2>
         <p className="text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-          Backend engineers, automation builders, AI tinkerers, and teams who want
-          transparency, control, and local-first intelligence.
+          Backend engineers, automation builders, AI tinkerers, and teams who
+          want transparency, control, and local-first intelligence.
         </p>
       </Card>
     </div>
-  )
+  );
 }

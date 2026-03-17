@@ -22,6 +22,20 @@ import {
 import Link from "next/link";
 import { Github } from "lucide-react";
 
+export const metadata = {
+  title: "AI Agent Automation | Open Source AI Workflow Engine",
+  description:
+    "AI Agent Automation is a local-first AI automation platform for building intelligent workflows with agents, tools, document RAG, and persistent memory.",
+  keywords: [
+    "AI automation",
+    "AI workflow engine",
+    "self hosted AI agents",
+    "AI automation platform",
+    "Zapier alternative",
+    "n8n alternative",
+  ],
+};
+
 export default function HomePage() {
   return (
     <div className="min-h-screen bg-background">
@@ -120,17 +134,13 @@ export default function HomePage() {
                 <div className="flex gap-4">
                   <span className="text-muted-foreground select-none">4</span>
                   <span className="text-primary">npm</span> run dev
-                  <span className="text-muted-foreground">
-                    # backend
-                  </span>
+                  <span className="text-muted-foreground"># backend</span>
                 </div>
 
                 <div className="flex gap-4">
                   <span className="text-muted-foreground select-none">4</span>
                   <span className="text-primary">npm</span> run worker
-                  <span className="text-muted-foreground">
-                    # worker
-                  </span>
+                  <span className="text-muted-foreground"># worker</span>
                 </div>
 
                 <div className="flex gap-4">

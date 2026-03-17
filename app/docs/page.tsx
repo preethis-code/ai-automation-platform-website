@@ -1,27 +1,40 @@
-import { Badge } from "@/components/ui/badge"
-import { Card } from "@/components/ui/card"
-import { Info, ShieldCheck, Zap, Bot, Layout, Terminal } from "lucide-react"
+import { Badge } from "@/components/ui/badge";
+import { Card } from "@/components/ui/card";
+import { Info, ShieldCheck, Zap, Bot, Layout, Terminal } from "lucide-react";
+
+export const metadata = {
+  title: "Documentation | AI Agent Automation",
+  description:
+    "Official documentation for AI Agent Automation including installation, workflows, agents, tools, and system architecture.",
+};
 
 export default function DocsIntroduction() {
   return (
     <div className="space-y-10 animate-fade-in">
       <div className="space-y-4">
-        <Badge variant="outline" className="text-primary border-primary/20 bg-primary/5">
+        <Badge
+          variant="outline"
+          className="text-primary border-primary/20 bg-primary/5"
+        >
           Documentation
         </Badge>
-        <h1 className="text-4xl md:text-6xl font-bold tracking-tight">Introduction</h1>
+        <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
+          Introduction
+        </h1>
         <p className="text-xl text-muted-foreground leading-relaxed">
-          The AI Agent Automation Platform is a production-grade execution engine for building autonomous agents and
-          intelligent workflows.
+          The AI Agent Automation Platform is a production-grade execution
+          engine for building autonomous agents and intelligent workflows.
         </p>
       </div>
 
       <div className="prose prose-invert max-w-none">
         <p className="text-lg leading-relaxed text-muted-foreground">
-          This project is designed as a <strong className="text-foreground">real execution engine</strong>, not a demo
-          or prompt playground. It enables developers to orchestrate autonomous AI agents, automate backend workflows,
-          run tasks on schedules, and inspect executions with full observability—all while remaining completely local
-          and secure.
+          This project is designed as a{" "}
+          <strong className="text-foreground">real execution engine</strong>,
+          not a demo or prompt playground. It enables developers to orchestrate
+          autonomous AI agents, automate backend workflows, run tasks on
+          schedules, and inspect executions with full observability—all while
+          remaining completely local and secure.
         </p>
       </div>
 
@@ -67,13 +80,14 @@ export default function DocsIntroduction() {
           <div className="space-y-3">
             <h4 className="text-xl font-bold text-primary">Key Philosophy</h4>
             <p className="leading-relaxed text-muted-foreground">
-              AutoFlow is built on the principle that automation should be a utility you control. We prioritize local
-              execution and modular design to ensure that your intelligent pipelines are as secure as your internal
-              databases.
+              AutoFlow is built on the principle that automation should be a
+              utility you control. We prioritize local execution and modular
+              design to ensure that your intelligent pipelines are as secure as
+              your internal databases.
             </p>
           </div>
         </div>
       </Card>
     </div>
-  )
+  );
 }

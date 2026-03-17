@@ -10,6 +10,12 @@ import {
   Code,
 } from "lucide-react";
 
+export const metadata = {
+  title: "Automation Tools | AI Agent Automation Docs",
+  description:
+    "Extend AI workflows with automation tools including HTTP requests, file operations, browser automation, and email integrations.",
+};
+
 export default function ToolsDocs() {
   return (
     <div className="space-y-10 animate-fade-in">
@@ -114,7 +120,12 @@ export default function ToolsDocs() {
       </div>
 
       <div className="space-y-6">
-        <h2 className="text-3xl font-bold">Conditional Logic & Branching</h2>
+        <h2 className="text-3xl font-bold flex items-center gap-3">
+          Conditional Logic & Branching
+          <Badge variant="outline" className="text-primary border-primary/40">
+            Under Development
+          </Badge>
+        </h2>
         <p className="text-muted-foreground">
           Use conditional steps to create dynamic workflows that adapt based on
           previous step outputs or external data.

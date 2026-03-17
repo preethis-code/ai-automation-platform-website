@@ -2,6 +2,12 @@ import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import { Settings, Key, Database, Globe, Code, Shield } from "lucide-react";
 
+export const metadata = {
+  title: "Configuration | AI Agent Automation Docs",
+  description:
+    "Configure AI providers, system settings, and environment variables for the AI Agent Automation platform.",
+};
+
 export default function ConfigurationDocs() {
   return (
     <div className="space-y-12 animate-fade-in">

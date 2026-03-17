@@ -2,6 +2,12 @@ import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import { Workflow, Code, CheckCircle2 } from "lucide-react";
 
+export const metadata = {
+  title: "Workflow Engine | AI Agent Automation Docs",
+  description:
+    "Understand how AI Agent Automation workflows orchestrate LLM reasoning, tools, and automation pipelines.",
+};
+
 export default function WorkflowsDocs() {
   return (
     <div className="space-y-10 animate-fade-in">
@@ -127,24 +133,38 @@ export default function WorkflowsDocs() {
           </div>
           <pre className="p-6 text-sm font-mono overflow-x-auto text-muted-foreground">
             <code>{`{
-  "name": "Daily Research Workflow",
-  "steps": [
-    {
-      "type": "browser",
-      "action": "scrape",
-      "url": "https://news.ycombinator.com"
-    },
-    {
-      "type": "llm",
-      "prompt": "Summarize the top 5 news items from: {{steps[0].output}}"
-    },
-    {
-      "type": "email",
-      "to": "admin@example.com",
-      "subject": "Daily Tech Digest",
-      "body": "{{steps[1].output}}"
-    }
-  ]
+    "id": "ai-research-agent",
+    "name": "AI Research Agent",
+    "description": "Automatically research a topic and summarize key findings.",
+    "category": "AI",
+    "icon": "🧠",
+    "tags": [
+        "research",
+        "ai"
+    ],
+    "steps": [
+        {
+            "name": "Research Topic",
+            "type": "llm",
+            "prompt": "Research the topic: {{input.topic}} and produce detailed findings, facts, and key insights.",
+            "useMemory": false,
+            "memoryTopK": 5
+        },
+        {
+            "name": "Summarize Findings",
+            "type": "llm",
+            "prompt": "Using the following research results, produce a clear and concise summary with bullet points:\n\n{{results}}",
+            "useMemory": false,
+            "memoryTopK": 5
+        },
+        {
+            "name": "Send Email",
+            "type": "email",
+            "to": "test@gmail.com",
+            "subject": "Testing Subject",
+            "text": "This is Ai Agent Automation testing email."
+        }
+    ]
 }`}</code>
           </pre>
         </Card>

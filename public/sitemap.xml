@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+<url>
+<loc>https://vmdeshpande.github.io/ai-automation-platform-website/</loc>
+</url>
+
+<url>
+<loc>https://vmdeshpande.github.io/ai-automation-platform-website/docs</loc>
+</url>
+
+<url>
+<loc>https://vmdeshpande.github.io/ai-automation-platform-website/features</loc>
+</url>
+
+<url>
+<loc>https://vmdeshpande.github.io/ai-automation-platform-website/roadmap</loc>
+</url>
+
+<url>
+<loc>https://vmdeshpande.github.io/ai-automation-platform-website/community</loc>
+</url>
+
+<url>
+<loc>https://vmdeshpande.github.io/ai-automation-platform-website/architecture</loc>
+</url>
+
+<url>
+<loc>https://vmdeshpande.github.io/ai-automation-platform-website/execution-model</loc>
+</url>
+
+<url>
+<loc>https://vmdeshpande.github.io/ai-automation-platform-website/internals</loc>
+</url>
+
+</urlset>
