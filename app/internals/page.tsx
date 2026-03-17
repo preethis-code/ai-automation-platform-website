@@ -15,12 +15,6 @@ import {
   ShieldCheck,
 } from "lucide-react";
 
-export const metadata = {
-  title: "Engine Internals | AI Agent Automation",
-  description:
-    "Deep dive into the internal components of AI Agent Automation including the execution engine, worker loop, tool adapters, and task lifecycle.",
-};
-
 /* -----------------------------
    Expandable Block
 ------------------------------ */
