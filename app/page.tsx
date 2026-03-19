@@ -77,7 +77,7 @@ export default function HomePage() {
               className="text-lg px-8 h-14 rounded-full"
               asChild
             >
-              <Link href="/docs">
+              <Link href="/docs/">
                 Start Building
                 <ChevronRight className="ml-2 h-5 w-5" />
               </Link>
@@ -340,7 +340,7 @@ export default function HomePage() {
                 className="h-14 px-8 text-lg rounded-full"
                 asChild
               >
-                <Link href="/docs">Read the Docs</Link>
+                <Link href="/docs/">Read the Docs</Link>
               </Button>
               <Button
                 size="lg"

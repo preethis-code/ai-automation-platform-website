@@ -286,7 +286,7 @@ export default function ShowcasePage() {
                 className="h-14 px-10 text-lg rounded-full"
                 asChild
               >
-                <Link href="/docs/installation">
+                <Link href="/docs/installation/">
                   Install Now
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
@@ -297,14 +297,14 @@ export default function ShowcasePage() {
                 className="h-14 px-10 text-lg rounded-full bg-transparent"
                 asChild
               >
-                <Link href="/docs">View Documentation</Link>
+                <Link href="/docs/">View Documentation</Link>
               </Button>
             </div>
           </div>
         </section>
         <p className="mt-6 text-sm text-muted-foreground">
           Want to see exactly how tasks, steps, and agents execute?
-          <Link href="/internals" className="text-primary hover:underline ml-1">
+          <Link href="/internals/" className="text-primary hover:underline ml-1">
             Explore system internals →
           </Link>
         </p>

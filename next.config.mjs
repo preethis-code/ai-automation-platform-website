@@ -3,6 +3,7 @@ const repoName = "ai-automation-platform-website";
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: "export",
+  trailingSlash: true,
 
   basePath:
     process.env.NODE_ENV === "production" ? `/${repoName}` : "",

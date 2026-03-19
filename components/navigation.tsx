@@ -48,7 +48,7 @@ export function Navigation({
 
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center gap-8 ml-10">
-            <Link href="/docs" className="text-sm font-medium hover:text-primary">
+            <Link href="/docs/" className="text-sm font-medium hover:text-primary">
               Docs
             </Link>
 
@@ -63,10 +63,10 @@ export function Navigation({
                   <NavigationMenuContent>
                     <div className="grid w-64 gap-1 p-2">
                       {[
-                        ["/roadmap", "Roadmap", "Where the project is headed"],
-                        ["/architecture", "Architecture", "Execution boundaries & system layout"],
-                        ["/execution-model", "Execution Model", "What happens when a workflow runs"],
-                        ["/internals", "Internals", "Engine components & design decisions"],
+                        ["/roadmap/", "Roadmap", "Where the project is headed"],
+                        ["/architecture/", "Architecture", "Execution boundaries & system layout"],
+                        ["/execution-model/", "Execution Model", "What happens when a workflow runs"],
+                        ["/internals/", "Internals", "Engine components & design decisions"],
                       ].map(([href, title, desc]) => (
                         <NavigationMenuLink key={href} asChild>
                           <Link href={href} className="rounded-md p-3 hover:bg-accent">
@@ -84,7 +84,7 @@ export function Navigation({
             </NavigationMenu>
 
             <Link
-              href="/features"
+              href="/features/"
               className="text-sm font-medium hover:text-primary"
             >
               Features
@@ -97,7 +97,7 @@ export function Navigation({
             </Link>
 
             <Link
-              href="/community"
+              href="/community/"
               className="text-sm font-medium hover:text-primary"
             >
               Community
@@ -115,7 +115,7 @@ export function Navigation({
               </Link>
             </Button>
             <Button size="sm" asChild>
-              <Link href="/docs">Get started</Link>
+              <Link href="/docs/">Get started</Link>
             </Button>
           </div>
 
@@ -147,13 +147,13 @@ export function Navigation({
 
             <nav className="flex-1 p-4 space-y-2">
               {[
-                ["/docs", "Docs"],
-                ["/roadmap", "Roadmap"],
-                ["/architecture", "Architecture"],
-                ["/execution-model", "Execution Model"],
-                ["/internals", "Internals"],
-                ["/showcase", "Showcase"],
-                ["/community", "Community"],
+                ["/docs/", "Docs"],
+                ["/roadmap/", "Roadmap"],
+                ["/architecture/", "Architecture"],
+                ["/execution-model/", "Execution Model"],
+                ["/internals/", "Internals"],
+                ["/showcase/", "Showcase"],
+                ["/community/", "Community"],
               ].map(([href, label]) => (
                 <Link
                   key={href}
@@ -168,7 +168,7 @@ export function Navigation({
 
             <div className="p-4 border-t border-border space-y-2">
               <Button className="w-full" asChild>
-                <Link href="/docs">Get started</Link>
+                <Link href="/docs/">Get started</Link>
               </Button>
               <Button variant="outline" className="w-full" asChild>
                 <Link

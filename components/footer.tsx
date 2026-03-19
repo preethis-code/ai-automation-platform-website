@@ -45,7 +45,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/features"
+                  href="/features/"
                   className="text-muted-foreground hover:text-primary"
                 >
                   Features
@@ -53,7 +53,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/docs/architecture"
+                  href="/docs/architecture/"
                   className="text-muted-foreground hover:text-primary"
                 >
                   Architecture
@@ -113,7 +113,7 @@ export function Footer() {
             <ul className="space-y-2 text-sm">
               <li>
                 <Link
-                  href="/community"
+                  href="/community/"
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
                   Community
