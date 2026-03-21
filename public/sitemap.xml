@@ -1,37 +1,129 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 <url>
-<loc>https://vmdeshpande.github.io/ai-automation-platform-website/</loc>
+  <loc>https://vmdeshpande.github.io/ai-automation-platform-website/</loc>
+  <lastmod>2026-03-19T07:20:40+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://vmdeshpande.github.io/ai-automation-platform-website/docs/</loc>
+  <lastmod>2026-03-19T07:20:40+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vmdeshpande.github.io/ai-automation-platform-website/features/</loc>
+  <lastmod>2026-03-19T07:20:40+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vmdeshpande.github.io/ai-automation-platform-website/showcase/</loc>
+  <lastmod>2026-03-19T07:20:40+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vmdeshpande.github.io/ai-automation-platform-website/community/</loc>
+  <lastmod>2026-03-19T07:20:40+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vmdeshpande.github.io/ai-automation-platform-website/docs/architecture/</loc>
+  <lastmod>2026-03-19T07:20:40+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vmdeshpande.github.io/ai-automation-platform-website/docs/workflows/</loc>
+  <lastmod>2026-03-19T07:20:40+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vmdeshpande.github.io/ai-automation-platform-website/docs/installation/</loc>
+  <lastmod>2026-03-19T07:20:40+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vmdeshpande.github.io/ai-automation-platform-website/docs/quickstart/</loc>
+  <lastmod>2026-03-19T07:20:40+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vmdeshpande.github.io/ai-automation-platform-website/docs/configuration/</loc>
+  <lastmod>2026-03-19T07:20:40+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vmdeshpande.github.io/ai-automation-platform-website/docs/why/</loc>
+  <lastmod>2026-03-19T07:20:40+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vmdeshpande.github.io/ai-automation-platform-website/docs/why-compare/</loc>
+  <lastmod>2026-03-19T07:20:40+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vmdeshpande.github.io/ai-automation-platform-website/docs/agents/</loc>
+  <lastmod>2026-03-19T07:20:40+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vmdeshpande.github.io/ai-automation-platform-website/docs/runner/</loc>
+  <lastmod>2026-03-19T07:20:40+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vmdeshpande.github.io/ai-automation-platform-website/docs/tools/</loc>
+  <lastmod>2026-03-19T07:20:40+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vmdeshpande.github.io/ai-automation-platform-website/docs/scheduler/</loc>
+  <lastmod>2026-03-19T07:20:40+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vmdeshpande.github.io/ai-automation-platform-website/docs/rag/</loc>
+  <lastmod>2026-03-19T07:20:40+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vmdeshpande.github.io/ai-automation-platform-website/docs/memory/</loc>
+  <lastmod>2026-03-19T07:20:40+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vmdeshpande.github.io/ai-automation-platform-website/docs/logs/</loc>
+  <lastmod>2026-03-19T07:20:40+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vmdeshpande.github.io/ai-automation-platform-website/docs/api-reference/</loc>
+  <lastmod>2026-03-19T07:20:40+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vmdeshpande.github.io/ai-automation-platform-website/docs/deployment/</loc>
+  <lastmod>2026-03-19T07:20:40+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vmdeshpande.github.io/ai-automation-platform-website/docs/security/</loc>
+  <lastmod>2026-03-19T07:20:40+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vmdeshpande.github.io/ai-automation-platform-website/docs/local-first/</loc>
+  <lastmod>2026-03-19T07:20:40+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vmdeshpande.github.io/ai-automation-platform-website/internals/</loc>
+  <lastmod>2026-03-19T07:20:40+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 
-<url>
-<loc>https://vmdeshpande.github.io/ai-automation-platform-website/docs/</loc>
-</url>
-
-<url>
-<loc>https://vmdeshpande.github.io/ai-automation-platform-website/features/</loc>
-</url>
-
-<url>
-<loc>https://vmdeshpande.github.io/ai-automation-platform-website/roadmap/</loc>
-</url>
-
-<url>
-<loc>https://vmdeshpande.github.io/ai-automation-platform-website/community/</loc>
-</url>
-
-<url>
-<loc>https://vmdeshpande.github.io/ai-automation-platform-website/architecture/</loc>
-</url>
-
-<url>
-<loc>https://vmdeshpande.github.io/ai-automation-platform-website/execution-model/</loc>
-</url>
-
-<url>
-<loc>https://vmdeshpande.github.io/ai-automation-platform-website/internals/</loc>
-</url>
 
 </urlset>
