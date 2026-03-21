@@ -1,4 +1,12 @@
 User-agent: *
 Allow: /
 
+# Allow Next.js assets
+Allow: /_next/
+
+# Disallow unnecessary paths
+Disallow: /api/
+Disallow: /.git/
+
+# Sitemap
 Sitemap: https://vmdeshpande.github.io/ai-automation-platform-website/sitemap.xml
